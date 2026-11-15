@@ -8,3 +8,6 @@ Media host + editing pipeline for the **Vice City Moments** YouTube channel.
 - `tools/music.py` – original synthwave backing-track generator (royalty-free).
 
 Source footage: official Rockstar Games GTA VI media kit (rockstargames.com/VI/media), which Rockstar offers to download and share.
+
+## Footage
+`footage/screenshots` (138 official screenshots) and `footage/clips` (9 official clips) from the Rockstar Games GTA VI media kit. `tools/render.py` expects them under `shots/` and `videos/` relative to its working directory – symlink or copy before rendering.
