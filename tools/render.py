@@ -14,10 +14,7 @@ _img_cache = {}
 
 def load_image(name):
     if name not in _img_cache:
-        im = Image.open(SHOTS[name]).convert("RGB")
-        bh = int(H * 1.18)
-        bw = int(im.width * bh / im.height)
-        _img_cache[name] = im.resize((bw, bh), Image.LANCZOS)
+        _img_cache[name] = Image.open(SHOTS[name]).convert("RGB")
     return _img_cache[name]
 
 
@@ -37,16 +34,23 @@ def load_clip(name, start=0.0, dur=None, bh=2266):
     return [Image.fromarray(a) for a in arr]
 
 
+MAX_UPSCALE = 1.8
+
+
 def crop_vertical(src, xc, z, yc=0.5):
-    """Crop a 9:16 window from src at horizontal centre xc (0-1), zoom z (>=1)."""
-    ch = src.height / z
+    """Crop a 9:16 window from src at horizontal centre xc (0-1), zoom z (>=1).
+    Zoom is capped so the crop is never stretched more than MAX_UPSCALE (keeps it sharp)."""
+    ch = max(src.height / z, H / MAX_UPSCALE)
     cw = ch * 9 / 16
     if cw > src.width:
         cw = src.width
         ch = cw * 16 / 9
     x0 = min(max(xc * src.width - cw / 2, 0), src.width - cw)
     y0 = min(max(yc * src.height - ch / 2, 0), src.height - ch)
-    return src.resize((W, H), Image.BILINEAR, box=(x0, y0, x0 + cw, y0 + ch))
+    out = src.resize((W, H), Image.LANCZOS, box=(x0, y0, x0 + cw, y0 + ch))
+    if ch < H * 0.98:
+        out = out.filter(ImageFilter.UnsharpMask(radius=1.6, percent=70, threshold=2))
+    return out
 
 
 def fit_vertical(src, z):
@@ -100,7 +104,7 @@ def build(segments, texts, out, flashes=(), shapes=()):
     enc = subprocess.Popen(
         ["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS),
          "-i", "-", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo", "-shortest",
-         "-c:v", "libx264", "-preset", "veryfast", "-crf", "17", "-pix_fmt", "yuv420p",
+         "-c:v", "libx264", "-preset", "medium", "-crf", "15", "-profile:v", "high", "-tune", "film", "-pix_fmt", "yuv420p",
          "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", out],
         stdin=subprocess.PIPE)
     seg_start = 0.0
@@ -163,7 +167,7 @@ def build(segments, texts, out, flashes=(), shapes=()):
                         col = sh.get("color", (255, 214, 10))
                         if sh["type"] == "circle":
                             r = sh["r"] * (1.6 - 0.6 * grow)
-                            for w in range(12):
+                            for w in range(16):
                                 d.ellipse([sh["cx"] - r - w, sh["cy"] - r - w, sh["cx"] + r + w, sh["cy"] + r + w], outline=col + (255,))
                         else:
                             hw, hh = sh["w"] / 2 * (1.3 - 0.3 * grow), sh["h"] / 2 * (1.3 - 0.3 * grow)
