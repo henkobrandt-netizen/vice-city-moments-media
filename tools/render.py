@@ -88,7 +88,7 @@ def text_block(lines, size=110, color=(255, 255, 255), stroke=12, max_w=940):
     return Image.alpha_composite(shadow, img)
 
 
-def build(segments, texts, out, flashes=()):
+def build(segments, texts, out, flashes=(), shapes=()):
     """segments: dicts {img|clip, xc, dur, z0, z1, fit, punch}
     texts: dicts {t0, t1, lines, size, y (centre, px), pop}"""
     total = sum(s["dur"] for s in segments)
@@ -134,7 +134,15 @@ def build(segments, texts, out, flashes=()):
             xc = s.get("xc", 0.5)
             if "x1" in s:
                 xc = xc + (s["x1"] - xc) * p
-            frame = fit_vertical(src, z) if s.get("fit") else crop_vertical(src, xc, z, s.get("yc", 0.5))
+            yc = s.get("yc", 0.5)
+            if "y1" in s:
+                yc = yc + (s["y1"] - yc) * p
+            if "ease" in s:
+                e = p * p * (3 - 2 * p)
+                z = s.get("z0", 1.0) + (s.get("z1", 1.08) - s.get("z0", 1.0)) * e
+                xc = s.get("xc", 0.5) + (s.get("x1", s.get("xc", 0.5)) - s.get("xc", 0.5)) * e
+                yc = s.get("yc", 0.5) + (s.get("y1", s.get("yc", 0.5)) - s.get("yc", 0.5)) * e
+            frame = fit_vertical(src, z) if s.get("fit") else crop_vertical(src, xc, z, yc)
             t = fi / FPS
             frame = frame.convert("RGBA")
             for td, im in tex:
@@ -147,6 +155,19 @@ def build(segments, texts, out, flashes=()):
                     x = (W - o.width) // 2
                     y = int(td.get("y", 560) - o.height / 2)
                     frame.alpha_composite(o, (x, max(y, 0)))
+            if shapes:
+                d = ImageDraw.Draw(frame)
+                for sh in shapes:
+                    if sh["t0"] <= t < sh["t1"]:
+                        grow = min(1.0, (t - sh["t0"]) * FPS / 6)
+                        col = sh.get("color", (255, 214, 10))
+                        if sh["type"] == "circle":
+                            r = sh["r"] * (1.6 - 0.6 * grow)
+                            for w in range(12):
+                                d.ellipse([sh["cx"] - r - w, sh["cy"] - r - w, sh["cx"] + r + w, sh["cy"] + r + w], outline=col + (255,))
+                        else:
+                            hw, hh = sh["w"] / 2 * (1.3 - 0.3 * grow), sh["h"] / 2 * (1.3 - 0.3 * grow)
+                            d.rectangle([sh["cx"] - hw, sh["cy"] - hh, sh["cx"] + hw, sh["cy"] + hh], outline=col + (255,), width=12)
             frame = frame.convert("RGB")
             if fi in flash_alpha:
                 frame = Image.blend(frame, Image.new("RGB", (W, H), (255, 255, 255)), flash_alpha[fi])
