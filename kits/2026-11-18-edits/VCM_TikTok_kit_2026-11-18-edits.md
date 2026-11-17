@@ -1,10 +1,10 @@
 # Vice City Moments – TikTok kit (2026-11-18-edits)
 
-For each post: save the file → TikTok **+** → Upload → **Sounds**: search the sound, keep it starting at **0:00**,
+For each post: download the file (iPhone/iPad: link → Download → Files → Share → Save Video) → TikTok **+** → Upload → **Sounds**: search the sound, keep it starting at **0:00**,
 set the video's original volume to 0 → paste the caption → Post (Everyone, comments on).
 
 ## 1. Wed 18 Nov, 20:00 – "days waited" edit
-- **File:** `TT_05_days_waited_SILENT.mp4`
+- **File:** `TT_05_days_waited_SILENT.mp4` – download: https://raw.githubusercontent.com/henkobrandt-netizen/vice-city-moments-media/main/shorts/2026-11-18-edits/TT_05_days_waited_SILENT.mp4
 - **Sound:** Blood In Your Eyes (from GTAVI: The Album) – Tove Lo & Grand Theft Auto VI (https://www.tiktok.com/music/Blood-In-Your-Eyes-from-GTAVI-The-Album-7706235559538919425)
 - **Caption (copy):**
 
@@ -13,7 +13,7 @@ set the video's original volume to 0 → paste the caption → Post (Everyone, c
 ```
 
 ## 2. Thu 19 Nov, 17:00 – "Welcome to Leonida" edit
-- **File:** `TT_06_welcome_to_leonida_SILENT.mp4`
+- **File:** `TT_06_welcome_to_leonida_SILENT.mp4` – download: https://raw.githubusercontent.com/henkobrandt-netizen/vice-city-moments-media/main/shorts/2026-11-18-edits/TT_06_welcome_to_leonida_SILENT.mp4
 - **Sound:** RUPTURE (Super Slowed) – chief doro & CASAP (https://www.tiktok.com/music/RUPTURE-Super-Slowed-7704975617581795334)
 - **Caption (copy):**
 

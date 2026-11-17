@@ -35,7 +35,7 @@ def main(cfg_path, out_dir):
     name, posts = cfg["name"], cfg["posts"]
     os.makedirs(out_dir, exist_ok=True)
     md = [f"# Vice City Moments – TikTok kit ({name})", "",
-          "For each post: save the file → TikTok **+** → Upload → **Sounds**: search the sound, keep it starting at **0:00**,",
+          "For each post: download the file (iPhone/iPad: link → Download → Files → Share → Save Video) → TikTok **+** → Upload → **Sounds**: search the sound, keep it starting at **0:00**,",
           "set the video's original volume to 0 → paste the caption → Post (Everyone, comments on).", ""]
     ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Vice City Moments//TikTok kit//EN", "CALSCALE:GREGORIAN",
            "BEGIN:VTIMEZONE", f"TZID:{TZ}", "BEGIN:STANDARD", "DTSTART:19700101T000000",
@@ -44,16 +44,18 @@ def main(cfg_path, out_dir):
     for i, p in enumerate(posts, 1):
         t = datetime.strptime(p["when"], "%Y-%m-%d %H:%M")
         md += [f"## {i}. {t:%a %d %b, %H:%M} – {p.get('what', p['file'])}",
-               f"- **File:** `{p['file']}`",
+               f"- **File:** `{p['file']}`" + (f" – download: {p['file_url']}" if p.get("file_url") else ""),
                f"- **Sound:** {p['sound']}" + (f" ({p['sound_url']})" if p.get("sound_url") else ""),
                "- **Caption (copy):**", "", "```", p["caption"], "```", ""]
-        desc = (f"File: {p['file']}\nSound: {p['sound']} (from 0:00, original volume 0)\n"
+        desc = ((f"1. Download video: {p['file_url']}\n   (iPhone/iPad: tap link > Download > open in Files > Share > Save Video, so it's in Photos)\n2. TikTok + > Upload the video > Sounds: pick the sound below from 0:00\n3. Paste the caption > Post\n\n" if p.get("file_url") else "") + f"File: {p['file']}\nSound: {p['sound']} (from 0:00, original volume 0)\n"
                 + (f"{p['sound_url']}\n" if p.get("sound_url") else "") + f"Caption:\n{p['caption']}")
         ics += ["BEGIN:VEVENT", f"UID:{uuid.uuid4()}@vcm", f"DTSTAMP:{stamp}",
                 f"DTSTART;TZID={TZ}:{t:%Y%m%dT%H%M%S}",
                 f"DTEND;TZID={TZ}:{t + timedelta(minutes=15):%Y%m%dT%H%M%S}",
                 fold("SUMMARY:" + esc(f"VCM TikTok: post {p.get('what', p['file'])}")),
                 fold("DESCRIPTION:" + esc(desc))]
+        if p.get("file_url"):
+            ics += [fold("URL:" + p["file_url"])]
         for mins in (60, 10):
             ics += ["BEGIN:VALARM", "ACTION:DISPLAY", fold("DESCRIPTION:" + esc(f"Post on TikTok: {p.get('what', p['file'])}")),
                     f"TRIGGER:-PT{mins}M", "END:VALARM"]
