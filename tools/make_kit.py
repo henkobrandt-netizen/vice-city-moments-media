@@ -8,7 +8,7 @@ kit.json = {"name": "2026-11-18-edits", "posts": [
 Times are Africa/Johannesburg. Writes OUT_DIR/VCM_TikTok_kit_<name>.md and
 OUT_DIR/VCM_TikTok_reminders_<name>.ics (one event per post, alerts 60 and 10 min before).
 The .ics opens on iPhone/Mac/Windows and adds to the iCloud Calendar (Reminders can't import files)."""
-import json, sys, os, uuid
+import json, sys, os, uuid, glob, hashlib
 from datetime import datetime, timedelta, timezone
 
 TZ = "Africa/Johannesburg"
@@ -30,14 +30,15 @@ def fold(line):
     return "\r\n ".join(out)
 
 
-def main(cfg_path, out_dir):
+def main(cfg_path, out_dir, feed=False):
     cfg = json.load(open(cfg_path))
     name, posts = cfg["name"], cfg["posts"]
     os.makedirs(out_dir, exist_ok=True)
     md = [f"# Vice City Moments – TikTok kit ({name})", "",
           "For each post: download the file (iPhone/iPad: link → Download → Files → Share → Save Video) → TikTok **+** → Upload → **Sounds**: search the sound, keep it starting at **0:00**,",
           "set the video's original volume to 0 → paste the caption → Post (Everyone, comments on).", ""]
-    ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Vice City Moments//TikTok kit//EN", "CALSCALE:GREGORIAN",
+    ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Vice City Moments//TikTok kit//EN", "CALSCALE:GREGORIAN", "X-WR-CALNAME:VCM TikTok posts", "X-WR-TIMEZONE:Africa/Johannesburg",
+           "REFRESH-INTERVAL;VALUE=DURATION:PT1H", "X-PUBLISHED-TTL:PT1H",
            "BEGIN:VTIMEZONE", f"TZID:{TZ}", "BEGIN:STANDARD", "DTSTART:19700101T000000",
            "TZOFFSETFROM:+0200", "TZOFFSETTO:+0200", "TZNAME:SAST", "END:STANDARD", "END:VTIMEZONE"]
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
@@ -49,7 +50,7 @@ def main(cfg_path, out_dir):
                "- **Caption (copy):**", "", "```", p["caption"], "```", ""]
         desc = ((f"1. Download video: {p['file_url']}\n   (iPhone/iPad: tap link > Download > open in Files > Share > Save Video, so it's in Photos)\n2. TikTok + > Upload the video > Sounds: pick the sound below from 0:00\n3. Paste the caption > Post\n\n" if p.get("file_url") else "") + f"File: {p['file']}\nSound: {p['sound']} (from 0:00, original volume 0)\n"
                 + (f"{p['sound_url']}\n" if p.get("sound_url") else "") + f"Caption:\n{p['caption']}")
-        ics += ["BEGIN:VEVENT", f"UID:{uuid.uuid4()}@vcm", f"DTSTAMP:{stamp}",
+        ics += ["BEGIN:VEVENT", f"UID:{hashlib.md5((p['file'] + p['when']).encode()).hexdigest()}@vcm", f"DTSTAMP:{stamp}",
                 f"DTSTART;TZID={TZ}:{t:%Y%m%dT%H%M%S}",
                 f"DTEND;TZID={TZ}:{t + timedelta(minutes=15):%Y%m%dT%H%M%S}",
                 fold("SUMMARY:" + esc(f"VCM TikTok: post {p.get('what', p['file'])}")),
@@ -61,6 +62,11 @@ def main(cfg_path, out_dir):
                     f"TRIGGER:-PT{mins}M", "END:VALARM"]
         ics += ["END:VEVENT"]
     ics += ["END:VCALENDAR"]
+    if feed:
+        icp = os.path.join(out_dir, "vcm-tiktok.ics")
+        open(icp, "w", newline="").write("\r\n".join(ics) + "\r\n")
+        print(icp)
+        return
     mdp = os.path.join(out_dir, f"VCM_TikTok_kit_{name}.md")
     icp = os.path.join(out_dir, f"VCM_TikTok_reminders_{name}.ics")
     open(mdp, "w").write("\n".join(md))
@@ -69,5 +75,18 @@ def main(cfg_path, out_dir):
     print(icp)
 
 
+def build_feed(repo_root):
+    """Merge every kits/*/kit.json into calendar/vcm-tiktok.ics – the subscribed calendar feed."""
+    posts = []
+    for kp in sorted(glob.glob(os.path.join(repo_root, "kits", "*", "kit.json"))):
+        posts += json.load(open(kp))["posts"]
+    tmp = os.path.join(repo_root, "calendar", "_feed.json")
+    os.makedirs(os.path.dirname(tmp), exist_ok=True)
+    json.dump({"name": "feed", "posts": posts}, open(tmp, "w"), ensure_ascii=False)
+    main(tmp, os.path.join(repo_root, "calendar"), feed=True)
+    os.remove(tmp)
+
+
 if __name__ == "__main__":
     main(sys.argv[1], sys.argv[2])
+    build_feed(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
