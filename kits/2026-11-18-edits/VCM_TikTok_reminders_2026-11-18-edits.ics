@@ -1,0 +1,59 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Vice City Moments//TikTok kit//EN
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Africa/Johannesburg
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0200
+TZNAME:SAST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:f9260283-13e5-4c28-bf90-58935198d6c5@vcm
+DTSTAMP:20261117T142721Z
+DTSTART;TZID=Africa/Johannesburg:20261118T200000
+DTEND;TZID=Africa/Johannesburg:20261118T201500
+SUMMARY:VCM TikTok: post "days waited" edit
+DESCRIPTION:File: TT_05_days_waited_SILENT.mp4\nSound: Blood In Your Eyes
+  (from GTAVI: The Album) – Tove Lo & Grand Theft Auto VI (from 0:00\, o
+ riginal volume 0)\nhttps://www.tiktok.com/music/Blood-In-Your-Eyes-from-G
+ TAVI-The-Album-7706235559538919425\nCaption:\n4\,810 days waiting for GTA
+  6 and it's finally tomorrow 😭 How long have YOU waited? #gta6 #gtavi 
+ #vicecity #gta6edit
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Post on TikTok: "days waited" edit
+TRIGGER:-PT60M
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Post on TikTok: "days waited" edit
+TRIGGER:-PT10M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:9a9a1959-5402-4a52-b579-bbd49fbbf321@vcm
+DTSTAMP:20261117T142721Z
+DTSTART;TZID=Africa/Johannesburg:20261119T170000
+DTEND;TZID=Africa/Johannesburg:20261119T171500
+SUMMARY:VCM TikTok: post "Welcome to Leonida" edit
+DESCRIPTION:File: TT_06_welcome_to_leonida_SILENT.mp4\nSound: RUPTURE (Su
+ per Slowed) – chief doro & CASAP (from 0:00\, original volume 0)\nhttps
+ ://www.tiktok.com/music/RUPTURE-Super-Slowed-7704975617581795334\nCaption
+ :\nGTA 6 is finally out – all 6 regions of Leonida 🌴 Where are you g
+ oing first? #gta6 #gtavi #leonida #vicecity #gta6edit
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Post on TikTok: "Welcome to Leonida" edit
+TRIGGER:-PT60M
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Post on TikTok: "Welcome to Leonida" edit
+TRIGGER:-PT10M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
