@@ -92,7 +92,7 @@ def text_block(lines, size=110, color=(255, 255, 255), stroke=12, max_w=940):
     return Image.alpha_composite(shadow, img)
 
 
-def build(segments, texts, out, flashes=(), shapes=()):
+def build(segments, texts, out, flashes=(), shapes=(), overlay=None, grade=None):
     """segments: dicts {img|clip, xc, dur, z0, z1, fit, punch}
     texts: dicts {t0, t1, lines, size, y (centre, px), pop}"""
     total = sum(s["dur"] for s in segments)
@@ -148,7 +148,11 @@ def build(segments, texts, out, flashes=(), shapes=()):
                 yc = s.get("yc", 0.5) + (s.get("y1", s.get("yc", 0.5)) - s.get("yc", 0.5)) * e
             frame = fit_vertical(src, z) if s.get("fit") else crop_vertical(src, xc, z, yc)
             t = fi / FPS
+            if grade:
+                frame = grade(frame, t)
             frame = frame.convert("RGBA")
+            if overlay:
+                overlay(frame, t)
             for td, im in tex:
                 if td["t0"] <= t < td["t1"]:
                     age = (t - td["t0"]) * FPS
