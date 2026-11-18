@@ -12,7 +12,7 @@ set the video's original volume to 0 → paste the caption → Post (Everyone, c
 GTA 6 is finally here. 13 years. Where are you going first? 🌴 #gta6 #gtavi #vicecity #gta6edit
 ```
 
-## 2. Thu 19 Nov, 20:00 – "GTA VI" phonk action edit
+## 2. Wed 18 Nov, 16:30 – "GTA VI" phonk action edit
 - **File:** `TT_08c_rampage_cine_SILENT.mp4` – download: https://raw.githubusercontent.com/henkobrandt-netizen/vice-city-moments-media/main/shorts/2026-11-19-cine/TT_08c_rampage_cine_SILENT.mp4
 - **Sound:** RAMPAGE - SLOWED – ZMAJOR & Lurk & SEKIMANE (https://www.tiktok.com/music/x-7699178654191093761)
 - **Caption (copy):**
