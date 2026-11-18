@@ -1,28 +1,100 @@
 [
-  {"id": "bb-col-s2", "start": "2026-11-18T19:00", "mins": 15, "info": true,
-   "title": "Build Bill: Colosseum Short 2 goes live (YT + IG)",
-   "notes": "Posted automatically by Claude. Nothing to do.\n\"The Colosseum's Receipt Is Still on Its Wall\"\nTip: reply to the first comments within the hour.",
-   "url": "https://www.youtube.com/watch?v=aBrF_MQhzYM"},
-  {"id": "bb-col-s3", "start": "2026-11-19T19:00", "mins": 15, "info": true,
-   "title": "Build Bill: Colosseum Short 3 goes live (YT + IG)",
-   "notes": "Posted automatically by Claude. Nothing to do.\n\"Why the Colosseum Looks Like It Got Shot\"",
-   "url": "https://www.youtube.com/watch?v=Ma6RPAk9wQw"},
-  {"id": "bb-col-s4", "start": "2026-11-20T19:00", "mins": 15, "info": true,
-   "title": "Build Bill: Colosseum Short 4 goes live (YT + IG)",
-   "notes": "Posted automatically by Claude. Nothing to do.\n\"The Colosseum Was Flooded for Sea Battles\"",
-   "url": "https://www.youtube.com/watch?v=frofCSrCYhg"},
-  {"id": "bb-col-s5", "start": "2026-11-21T19:00", "mins": 15, "info": true,
-   "title": "Build Bill: Colosseum Short 5 goes live (YT + IG)",
-   "notes": "Posted automatically by Claude. Nothing to do.\n\"The Colosseum Had a Retractable Roof Run by Sailors\"",
-   "url": "https://www.youtube.com/watch?v=XGKDfRPvBHU"},
-  {"id": "bb-col-s6", "start": "2026-11-22T19:00", "mins": 15, "info": true,
-   "title": "Build Bill: Colosseum Short 6 goes live (YT + IG)",
-   "notes": "Posted automatically by Claude. Nothing to do.\n\"How Rome Moved 250,000 Tonnes of Stone\"",
-   "url": "https://www.youtube.com/watch?v=AVfVBGHVXsI"},
-  {"id": "bb-todo-tiktok-name", "start": "2026-11-22T09:00", "mins": 15, "info": false, "alarm_min": 0,
-   "title": "Build Bill TO DO: change TikTok name to \"The Build Bill\"",
-   "notes": "TikTok app > Profile > Edit profile > Name > The Build Bill. (TikTok allows 1 name change per 7 days.)\nThen message Claude: \"TikTok name done\" so it can set the bio and photo and schedule the Great Wall TikToks."},
-  {"id": "bb-greatwall-long", "start": "2026-11-23T21:00", "mins": 30, "info": true,
-   "title": "Build Bill: Great Wall of China episode (planned)",
-   "notes": "Planned: new long video \"Great Wall of China\" on YouTube. Its 3 Shorts (Part 1/3, 2/3, 3/3) follow on YouTube, Instagram and TikTok.\nClaude will message you first to approve."}
+ {
+  "id": "bb-col-s2",
+  "start": "2026-11-18T19:00",
+  "mins": 15,
+  "info": true,
+  "title": "Build Bill: Colosseum Short 2 goes live (YT + IG)",
+  "notes": "Posted automatically by Claude. Nothing to do.\n\"The Colosseum's Receipt Is Still on Its Wall\"\nTip: reply to the first comments within the hour.",
+  "url": "https://www.youtube.com/watch?v=aBrF_MQhzYM"
+ },
+ {
+  "id": "bb-col-s3",
+  "start": "2026-11-19T19:00",
+  "mins": 15,
+  "info": true,
+  "title": "Build Bill: Colosseum Short 3 goes live (YT + IG)",
+  "notes": "Posted automatically by Claude. Nothing to do.\n\"Why the Colosseum Looks Like It Got Shot\"",
+  "url": "https://www.youtube.com/watch?v=Ma6RPAk9wQw"
+ },
+ {
+  "id": "bb-col-s4",
+  "start": "2026-11-20T19:00",
+  "mins": 15,
+  "info": true,
+  "title": "Build Bill: Colosseum Short 4 goes live (YT + IG)",
+  "notes": "Posted automatically by Claude. Nothing to do.\n\"The Colosseum Was Flooded for Sea Battles\"",
+  "url": "https://www.youtube.com/watch?v=frofCSrCYhg"
+ },
+ {
+  "id": "bb-gw-long",
+  "start": "2026-11-20T21:00",
+  "mins": 30,
+  "info": true,
+  "title": "Build Bill: Great Wall episode goes live (YouTube)",
+  "notes": "Posted automatically by Claude. Nothing to do.\n\"How the Great Wall of China Was Built (And What It Would Cost Today)\"\nTip: reply to the first comments within the hour.",
+  "url": "https://www.youtube.com/watch?v=uaffkuU9Xpc"
+ },
+ {
+  "id": "bb-col-s5",
+  "start": "2026-11-21T19:00",
+  "mins": 15,
+  "info": true,
+  "title": "Build Bill: Colosseum Short 5 goes live (YT + IG)",
+  "notes": "Posted automatically by Claude. Nothing to do.\n\"The Colosseum Had a Retractable Roof Run by Sailors\"",
+  "url": "https://www.youtube.com/watch?v=XGKDfRPvBHU"
+ },
+ {
+  "id": "bb-todo-tiktok-name",
+  "start": "2026-11-22T09:00",
+  "mins": 15,
+  "info": false,
+  "alarm_min": 0,
+  "title": "Build Bill TO DO: change TikTok name to \"The Build Bill\"",
+  "notes": "TikTok app > Profile > Edit profile > Name > The Build Bill. (TikTok allows 1 name change per 7 days.)\nThen message Claude: \"TikTok name done\" so it can set the bio and photo and schedule the Great Wall TikToks (Parts 1-3, Mon 23 to Wed 25 Nov, 19:00)."
+ },
+ {
+  "id": "bb-col-s6",
+  "start": "2026-11-22T19:00",
+  "mins": 15,
+  "info": true,
+  "title": "Build Bill: Colosseum Short 6 goes live (YT + IG)",
+  "notes": "Posted automatically by Claude. Nothing to do.\n\"How Rome Moved 250,000 Tonnes of Stone\"",
+  "url": "https://www.youtube.com/watch?v=AVfVBGHVXsI"
+ },
+ {
+  "id": "bb-gw-p1",
+  "start": "2026-11-23T19:00",
+  "mins": 15,
+  "info": true,
+  "title": "Build Bill: Great Wall Part 1/3 goes live (YT + IG)",
+  "notes": "Posted automatically by Claude. TikTok too, once you've changed the TikTok name and told Claude.\n\"Why China Built a 21,000 km Wall\"",
+  "url": "https://www.youtube.com/watch?v=pGlKemXU18Y"
+ },
+ {
+  "id": "bb-gw-p2",
+  "start": "2026-11-24T19:00",
+  "mins": 15,
+  "info": true,
+  "title": "Build Bill: Great Wall Part 2/3 goes live (YT + IG)",
+  "notes": "Posted automatically by Claude.\n\"The Great Wall Is Held Together With Rice\"",
+  "url": "https://www.youtube.com/watch?v=TVqfobZNxxA"
+ },
+ {
+  "id": "bb-gw-p3",
+  "start": "2026-11-25T19:00",
+  "mins": 15,
+  "info": true,
+  "title": "Build Bill: Great Wall Part 3/3 goes live (YT + IG)",
+  "notes": "Posted automatically by Claude.\n\"The Great Wall's Weakest Point Wasn't a Wall\"",
+  "url": "https://www.youtube.com/watch?v=cKiwBgpG7SA"
+ },
+ {
+  "id": "bb-ep4",
+  "start": "2026-11-27T21:00",
+  "mins": 30,
+  "info": true,
+  "title": "Build Bill: episode 4 (planned)",
+  "notes": "Planned long video, in your own voice if you approve the voice test. Claude will message you first to approve."
+ }
 ]

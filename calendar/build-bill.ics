@@ -17,7 +17,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:253e37a99aec34e9106cc35e4b4db319@buildbill
-DTSTAMP:20261118T143312Z
+DTSTAMP:20261118T195827Z
 DTSTART;TZID=Africa/Johannesburg:20261118T190000
 DTEND;TZID=Africa/Johannesburg:20261118T191500
 SUMMARY:Build Bill: Colosseum Short 2 goes live (YT + IG)
@@ -29,7 +29,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:042b044a94b178bd922fdcbcdd149886@buildbill
-DTSTAMP:20261118T143312Z
+DTSTAMP:20261118T195827Z
 DTSTART;TZID=Africa/Johannesburg:20261119T190000
 DTEND;TZID=Africa/Johannesburg:20261119T191500
 SUMMARY:Build Bill: Colosseum Short 3 goes live (YT + IG)
@@ -40,7 +40,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:ffb8b029539195910faac018c5c3736d@buildbill
-DTSTAMP:20261118T143312Z
+DTSTAMP:20261118T195827Z
 DTSTART;TZID=Africa/Johannesburg:20261120T190000
 DTEND;TZID=Africa/Johannesburg:20261120T191500
 SUMMARY:Build Bill: Colosseum Short 4 goes live (YT + IG)
@@ -51,8 +51,21 @@ URL:https://www.youtube.com/watch?v=frofCSrCYhg
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:a7d4d294e59a6569ac9cf07168f351ba@buildbill
+DTSTAMP:20261118T195827Z
+DTSTART;TZID=Africa/Johannesburg:20261120T210000
+DTEND;TZID=Africa/Johannesburg:20261120T213000
+SUMMARY:Build Bill: Great Wall episode goes live (YouTube)
+DESCRIPTION:Posted automatically by Claude. Nothing to do.\n"How the Great
+  Wall of China Was Built (And What It Would Cost Today)"\nTip: reply to t
+ he first comments within the hour.\nhttps://www.youtube.com/watch?v=uaffk
+ uU9Xpc
+URL:https://www.youtube.com/watch?v=uaffkuU9Xpc
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:89b77fb87a2a51dee37cfb9c483890ac@buildbill
-DTSTAMP:20261118T143312Z
+DTSTAMP:20261118T195827Z
 DTSTART;TZID=Africa/Johannesburg:20261121T190000
 DTEND;TZID=Africa/Johannesburg:20261121T191500
 SUMMARY:Build Bill: Colosseum Short 5 goes live (YT + IG)
@@ -64,14 +77,14 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:edd346ffcf8b9bb6c1c35a8e78d66cd0@buildbill
-DTSTAMP:20261118T143312Z
+DTSTAMP:20261118T195827Z
 DTSTART;TZID=Africa/Johannesburg:20261122T090000
 DTEND;TZID=Africa/Johannesburg:20261122T091500
 SUMMARY:Build Bill TO DO: change TikTok name to "The Build Bill"
 DESCRIPTION:TikTok app > Profile > Edit profile > Name > The Build Bill. (
  TikTok allows 1 name change per 7 days.)\nThen message Claude: "TikTok na
  me done" so it can set the bio and photo and schedule the Great Wall TikT
- oks.
+ oks (Parts 1-3\, Mon 23 to Wed 25 Nov\, 19:00).
 TRANSP:OPAQUE
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -81,7 +94,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:889752fa1ee119a7a68057298a8de797@buildbill
-DTSTAMP:20261118T143312Z
+DTSTAMP:20261118T195827Z
 DTSTART;TZID=Africa/Johannesburg:20261122T190000
 DTEND;TZID=Africa/Johannesburg:20261122T191500
 SUMMARY:Build Bill: Colosseum Short 6 goes live (YT + IG)
@@ -91,14 +104,47 @@ URL:https://www.youtube.com/watch?v=AVfVBGHVXsI
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:632d06cf4b893728c65b4dd0648c4182@buildbill
-DTSTAMP:20261118T143312Z
-DTSTART;TZID=Africa/Johannesburg:20261123T210000
-DTEND;TZID=Africa/Johannesburg:20261123T213000
-SUMMARY:Build Bill: Great Wall of China episode (planned)
-DESCRIPTION:Planned: new long video "Great Wall of China" on YouTube. Its 
- 3 Shorts (Part 1/3\, 2/3\, 3/3) follow on YouTube\, Instagram and TikTok.
- \nClaude will message you first to approve.
+UID:3258e663e9853cc7100d08fbefd798da@buildbill
+DTSTAMP:20261118T195827Z
+DTSTART;TZID=Africa/Johannesburg:20261123T190000
+DTEND;TZID=Africa/Johannesburg:20261123T191500
+SUMMARY:Build Bill: Great Wall Part 1/3 goes live (YT + IG)
+DESCRIPTION:Posted automatically by Claude. TikTok too\, once you've chang
+ ed the TikTok name and told Claude.\n"Why China Built a 21\,000 km Wall"\
+ nhttps://www.youtube.com/watch?v=pGlKemXU18Y
+URL:https://www.youtube.com/watch?v=pGlKemXU18Y
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:baa930c17dee6758cbff2c493962cd02@buildbill
+DTSTAMP:20261118T195827Z
+DTSTART;TZID=Africa/Johannesburg:20261124T190000
+DTEND;TZID=Africa/Johannesburg:20261124T191500
+SUMMARY:Build Bill: Great Wall Part 2/3 goes live (YT + IG)
+DESCRIPTION:Posted automatically by Claude.\n"The Great Wall Is Held Toget
+ her With Rice"\nhttps://www.youtube.com/watch?v=TVqfobZNxxA
+URL:https://www.youtube.com/watch?v=TVqfobZNxxA
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:b1371bdc0d396396307d4c188d704092@buildbill
+DTSTAMP:20261118T195827Z
+DTSTART;TZID=Africa/Johannesburg:20261125T190000
+DTEND;TZID=Africa/Johannesburg:20261125T191500
+SUMMARY:Build Bill: Great Wall Part 3/3 goes live (YT + IG)
+DESCRIPTION:Posted automatically by Claude.\n"The Great Wall's Weakest Poi
+ nt Wasn't a Wall"\nhttps://www.youtube.com/watch?v=cKiwBgpG7SA
+URL:https://www.youtube.com/watch?v=cKiwBgpG7SA
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:5682b08ea174a028cca59d341d7ff1cd@buildbill
+DTSTAMP:20261118T195827Z
+DTSTART;TZID=Africa/Johannesburg:20261127T210000
+DTEND;TZID=Africa/Johannesburg:20261127T213000
+SUMMARY:Build Bill: episode 4 (planned)
+DESCRIPTION:Planned long video\, in your own voice if you approve the voic
+ e test. Claude will message you first to approve.
 TRANSP:TRANSPARENT
 END:VEVENT
 END:VCALENDAR
