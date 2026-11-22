@@ -17,7 +17,7 @@ Read by the daily edit run. Scout never posts, joins campaigns or spends money. 
 - **18 Nov – Rapid beat montage with logo-animation hook** (@havoceeditz 2M+, Flower In A Hurricane / Love Is A Long Road, 10 Nov). Already in recipe.
 - Post-launch: gameplay variety only via streamer-clip campaigns (below).
 - Caveat: stats come from vidIQ sound-search summaries, not watched videos.
-- 20 Nov 07:03, 12:04, 17:05 and 21 Nov 07:04, 12:04, and 22 Nov 07:04: no new breakout edit/format found via search (results = older record-view stories, clipping guides, AI-slop/hoax stories, news about the content economy).
+- 20 Nov 07:03, 12:04, 17:05 and 21 Nov 07:04, 12:04, 22 Nov 07:04 and 12:04: no new breakout edit/format found via search (results = older record-view stories, clipping guides, AI-slop/hoax stories, news about the content economy).
 
 ## Sounds
 Data: vidIQ TikTok trending sound search "gta 6 edits", tracked 7–20 Nov (run 21 Nov 17:05 SAST, 5 credits; balance 1,600 before). Next paid refresh only in a 17:00–17:59 SAST run (22 Nov). Previous window 6–19 Nov (20 Nov 17:05) in brackets.
@@ -77,6 +77,7 @@ Source: https://contentrewards.com/articles/gta-6-clipping — **re-read 22 Nov 
 - Streamer-VOD note: xQc forced by Twitch to take down a GTA 6 VOD (Dexerto) → stay campaign-only.
 
 ## Run log
+- 22 Nov 12:04 SAST (free): balance 1,595. CR article re-read via subagent: modified 21 Nov 09:23 UTC (unchanged since 07:04 run), 17 campaigns all known, no new/changed. rockstargames.com/VI + /VI/media still NOT fetchable (permission timeout) → "Out Now" unconfirmed; searches (Rockstar "Out Now", new trailer, clipping campaigns, viral GTA 6 edits) = only old items (Extended Look, Launch Trailer, AI-slop/recreation stories). Nothing new → no message.
 - 22 Nov 07:04 SAST (free): balance 1,595. CR article re-read via subagent (modified 21 Nov 09:23 UTC): 17 campaigns all known, only change KreekCraft $1.00→$0.50/1K (YouTube min $5). rockstargames.com/VI + /VI/media NOT fetchable this run (permission timeout) → "Out Now" still unconfirmed; searches show no new official video, no new campaign, no breakout edit/sound. Nothing high-value → no message.
 - 21 Nov summary (07:04, 12:04, 17:05 SAST): 17:05 paid run (5 credits: sound search "gta 6 edits"; balance 1,600 before) found NEW sounds LUNATIC–Slowed (9.0x, 1.1M/hr, meme-diluted) + GOOD LOOKING (HARDTEKK) (3.4x, 50% niche); Se Me Nota fading; rockstargames.com/VI readable → nothing after 19 Nov, "Out Now" video entry unconfirmed. 12:04 found NEW ClipOfficial "[GTA VI] MUSIC | 10 TRACKS" ($1/1K, TikTok+IG, $1,000), Aron Orlando paused, Dasgasd3m rate $2/1K. 07:04 nothing new. Owner messaged at 12:04 + 17:05.
 - 20 Nov summary (07:03, 12:04, 17:05 SAST): 17:05 paid run (5 credits: sound search "gta 6 edits"; balance 1,610 before) re-read CR article (modified 20 Nov 05:24 UTC) → 3 NEW YouTube-eligible campaigns (Boeshi, Bobby VanRiper, DiegoLoveless), TOMO paused, Medal contest closed; sounds refreshed (Flower 885/day 3.5M/hr; Blood In Your Eyes 244/day 669.7K/hr; Se Me Nota 116/373K); owner messaged. 07:03 + 12:04: free runs, found Rockstar "Now Available" post (no new video), nothing else.
